@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .wp-content h1 {
+    @apply vw-text-4xl vw-font-bold vw-mb-6 vw-text-brand-dark vw-leading-tight;
+  }
+
+  .wp-content h2 {
+    @apply vw-text-3xl vw-font-semibold vw-mb-5 vw-text-brand-dark vw-leading-snug;
+  }
+
+  .wp-content h3 {
+    @apply vw-text-2xl vw-font-semibold vw-mb-4 vw-text-brand-dark;
+  }
+
+  .wp-content h4 {
+    @apply vw-text-xl vw-font-medium vw-mb-3 vw-text-brand-dark;
+  }
+
+  .wp-content p {
+    @apply vw-text-base vw-leading-relaxed vw-mb-4 vw-text-gray-700;
+  }
+
+  .wp-content a {
+    @apply vw-text-brand-accent vw-underline vw-underline-offset-2 hover:vw-text-red-700 vw-transition-colors;
+  }
+
+  .wp-content ul {
+    @apply vw-list-disc vw-list-inside vw-mb-4 vw-space-y-1 vw-text-gray-700;
+  }
+
+  .wp-content ol {
+    @apply vw-list-decimal vw-list-inside vw-mb-4 vw-space-y-1 vw-text-gray-700;
+  }
+
+  .wp-content img {
+    @apply vw-max-w-full vw-h-auto vw-rounded-md vw-my-4;
+  }
+
+  .wp-content blockquote {
+    @apply vw-border-l-4 vw-border-brand-accent vw-pl-4 vw-italic vw-text-gray-600 vw-my-6;
+  }
+}

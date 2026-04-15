@@ -1,0 +1,26 @@
+{
+  "name": "vander-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck"
+  },
+  "dependencies": {
+    "@vanderweb/wp-nuxt-core": "file:../wp-nuxt-core",
+    "nuxt": "^3.13.0"
+  },
+  "devDependencies": {
+    "@nuxt/image": "^1.8.0",
+    "@nuxtjs/tailwindcss": "^6.12.0",
+    "@types/node": "^25.6.0",
+    "@vueuse/core": "^11.0.0",
+    "@vueuse/nuxt": "^11.0.0",
+    "typescript": "^5.5.0"
+  }
+}
