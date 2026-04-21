@@ -14,9 +14,10 @@ export default {
     extend: {
       colors: {
         brand: {
-          dark: '#1a1a1a',
-          light: '#ffffff',
-          accent: '#e63329',
+          primary: 'var(--brand-primary)',
+          accent:  'var(--brand-accent)',
+          dark:    '#1a1a1a',
+          light:   '#ffffff',
         },
         vw: {
           slate: '#3F4B4D',
@@ -30,7 +31,7 @@ export default {
         vw: '1140px',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--brand-font)', 'system-ui', 'sans-serif'],
       },
     },
   },
