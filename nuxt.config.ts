@@ -1,3 +1,5 @@
+import siteConfig from './site.config.json'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
@@ -14,7 +16,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      wpApiBase: process.env.WP_API_BASE,
+      wpApiBase: process.env.WP_API_BASE ?? siteConfig.wpApiBase,
     },
   },
 
