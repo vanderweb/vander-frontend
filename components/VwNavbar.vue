@@ -4,13 +4,13 @@
       <!-- Logo + title -->
       <div class="vw-flex vw-items-center vw-gap-3">
         <img
-          src="https://vander.dk/wp-content/uploads/logo-vander-web-white-1024x510.png"
+          src="https://headless.vanderweb.dk/wp-content/uploads/logo-vander-web-white-1024x510.png"
           alt="Vander Web logo"
           class="vw-h-8 vw-w-auto"
         />
-        <span class="vw-text-white vw-font-bold vw-text-xl vw-uppercase vw-tracking-widest vw-hidden sm:vw-inline">
+        <h1 class="vw-text-white vw-font-bold vw-text-xl vw-uppercase vw-tracking-widest vw-hidden sm:vw-inline">
           Vander Web
-        </span>
+        </h1>
       </div>
 
       <!-- Social links -->

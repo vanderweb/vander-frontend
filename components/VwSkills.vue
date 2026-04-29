@@ -1,39 +1,48 @@
 <template>
-  <section class="vw-bg-vw-slate vw-py-16 vw-px-6">
-    <div class="vw-max-w-vw vw-mx-auto">
-      <div class="vw-divide-y vw-divide-white/20">
-        <div v-for="(section, i) in sections" :key="section.title">
-          <button
-            class="vw-w-full vw-flex vw-items-center vw-justify-between vw-py-5 vw-text-left vw-text-vw-light vw-font-semibold vw-text-lg hover:vw-text-white vw-transition-colors"
-            :aria-expanded="open === i"
-            @click="open = open === i ? null : i"
-          >
-            {{ section.title }}
-            <svg
-              class="vw-w-5 vw-h-5 vw-shrink-0 vw-transition-transform vw-duration-300"
-              :class="open === i ? 'vw-rotate-180' : ''"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
+  <section id="skills" class="vw-bg-vw-slate vw-py-16 vw-px-6">
+    <div class="vw-max-w-vw vw-mx-auto vw-flex vw-flex-col md:vw-flex-row vw-gap-10">
 
-          <Transition
-            enter-active-class="vw-transition-all vw-duration-300 vw-ease-out vw-overflow-hidden"
-            enter-from-class="vw-max-h-0 vw-opacity-0"
-            enter-to-class="vw-max-h-[2000px] vw-opacity-100"
-            leave-active-class="vw-transition-all vw-duration-200 vw-ease-in vw-overflow-hidden"
-            leave-from-class="vw-max-h-[2000px] vw-opacity-100"
-            leave-to-class="vw-max-h-0 vw-opacity-0"
-          >
-            <div v-if="open === i" class="vw-pb-8 vw-text-vw-light vw-text-sm vw-leading-relaxed">
-              <component :is="section.component" />
-            </div>
-          </Transition>
+      <!-- Left: heading + accordion -->
+      <div class="vw-flex-1 vw-min-w-0">
+        <h2 class="vw-text-2xl vw-font-bold vw-text-vw-light vw-mb-4 vw-uppercase vw-tracking-wide">
+          Portfolio
+        </h2>
+        <div class="vw-divide-y vw-divide-white/20">
+          <div v-for="(section, i) in sections" :key="section.title">
+            <button
+              class="vw-w-full vw-flex vw-items-center vw-gap-3 vw-py-3 vw-text-left vw-text-vw-light vw-font-bold vw-text-xs vw-uppercase vw-tracking-widest hover:vw-text-white vw-transition-colors"
+              :aria-expanded="open === i"
+              @click="open = open === i ? null : i"
+            >
+              <span class="vw-text-base vw-leading-none vw-w-4 vw-shrink-0">{{ open === i ? '−' : '+' }}</span>
+              {{ section.title }}
+            </button>
+
+            <Transition
+              enter-active-class="vw-transition-all vw-duration-300 vw-ease-out vw-overflow-hidden"
+              enter-from-class="vw-max-h-0 vw-opacity-0"
+              enter-to-class="vw-max-h-[2000px] vw-opacity-100"
+              leave-active-class="vw-transition-all vw-duration-200 vw-ease-in vw-overflow-hidden"
+              leave-from-class="vw-max-h-[2000px] vw-opacity-100"
+              leave-to-class="vw-max-h-0 vw-opacity-0"
+            >
+              <div v-if="open === i" class="vw-pb-6 vw-text-vw-light vw-text-sm vw-leading-relaxed">
+                <component :is="section.component" />
+              </div>
+            </Transition>
+          </div>
         </div>
       </div>
+
+      <!-- Right: profile photo -->
+      <div class="vw-shrink-0 vw-flex vw-justify-center md:vw-justify-end md:vw-items-start vw-pt-10">
+        <img
+          src="https://headless.vanderweb.dk/wp-content/uploads/ulrik-vander-300x300.jpg"
+          alt="Ulrik Vander"
+          class="vw-w-64 vw-h-64 vw-object-cover"
+        />
+      </div>
+
     </div>
   </section>
 </template>
@@ -100,11 +109,11 @@ const sections = [
   {
     title: 'Relevant Work Experience',
     component: timeline([
-      { period: '2021 –',      role: 'Frontend Developer', org: 'CarAds ApS, Odense',          tools: 'WordPress, Elementor, CSS, SCSS, Tailwind, HTML, PHP, VueJS, jQuery' },
-      { period: '2019 – 2020', role: 'Frontend Developer', org: 'redWEB ApS, Odense',           tools: 'WordPress, Joomla, CSS, Bootstrap, HTML, PHP, jQuery' },
-      { period: '2019 –',      role: 'WordPress Developer', org: 'Vander Web, Odense',          tools: 'WordPress, Elementor, CSS, HTML, PHP, jQuery' },
-      { period: '2013 – 2019', role: 'Web Programmer',     org: 'Certa Web, Odense',            tools: 'WordPress, Joomla, CSS, Bootstrap, HTML, PHP, jQuery — incl. WordPress Template Framework' },
-      { period: '2013 – 2014', role: 'Web Programmer',     org: 'Symatic Production, Odense',   tools: 'Joomla, CSS, Bootstrap, HTML, PHP' },
+      { period: '2021 –',      role: 'Frontend Developer',  org: 'CarAds ApS, Odense',          tools: 'WordPress, Elementor, CSS, SCSS, Tailwind, HTML, PHP, VueJS, jQuery' },
+      { period: '2019 – 2020', role: 'Frontend Developer',  org: 'redWEB ApS, Odense',           tools: 'WordPress, Joomla, CSS, Bootstrap, HTML, PHP, jQuery' },
+      { period: '2019 –',      role: 'WordPress Developer', org: 'Vander Web, Odense',           tools: 'WordPress, Elementor, CSS, HTML, PHP, jQuery' },
+      { period: '2013 – 2019', role: 'Web Programmer',      org: 'Certa Web, Odense',            tools: 'WordPress, Joomla, CSS, Bootstrap, HTML, PHP, jQuery — incl. WordPress Template Framework' },
+      { period: '2013 – 2014', role: 'Web Programmer',      org: 'Symatic Production, Odense',   tools: 'Joomla, CSS, Bootstrap, HTML, PHP' },
       { period: '2009 – 2012', role: 'Frontender',          org: 'redWEB ApS, Odense',           tools: 'Joomla, CSS, HTML, PHP' },
       { period: '2008',        role: 'Programmer',          org: 'Pharma Nord ApS, Vejle',       tools: 'PHP, MySQL, HTML, CSS — Intranet development' },
     ]),
@@ -112,9 +121,9 @@ const sections = [
   {
     title: 'Education / Courses',
     component: timeline([
-      { period: '2006 – 2007', role: 'Web-integrator',                        org: 'Odense Tekniske Skole' },
-      { period: '2002',        role: 'IT-Workshop',                            org: 'Odense Daghøjskole' },
-      { period: '1995 – 1999', role: 'Higher Preparatory Examination (HF)',   org: 'VUC Odense' },
+      { period: '2006 – 2007', role: 'Web-integrator',                      org: 'Odense Tekniske Skole' },
+      { period: '2002',        role: 'IT-Workshop',                          org: 'Odense Daghøjskole' },
+      { period: '1995 – 1999', role: 'Higher Preparatory Examination (HF)', org: 'VUC Odense' },
     ]),
   },
   {
@@ -141,6 +150,15 @@ const sections = [
   {
     title: 'Languages',
     component: rows(['English — written and spoken', 'Danish (mother tongue) — written and spoken']),
+  },
+  {
+    title: 'Private / Spare Time',
+    component: rows([
+      'Always the helping hand when family and friends need computer assistance.',
+      'Assists my sister with her pottery web shop (technical support).',
+      'Interests: family, computers, electronics, movies and RPG board games.',
+      'Lives in Vissenbjerg (Denmark), married with two children (17 and 7 years).',
+    ]),
   },
 ]
 </script>

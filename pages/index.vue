@@ -5,7 +5,6 @@
     <VwServices />
     <VwPortfolio />
     <VwSkills />
-    <VwProfile />
     <VwContact />
   </div>
 </template>

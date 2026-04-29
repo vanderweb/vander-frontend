@@ -1,8 +1,7 @@
 <template>
   <section id="portfolio" class="vw-bg-white vw-py-16 vw-px-6">
     <div class="vw-max-w-vw vw-mx-auto">
-      <h2 class="vw-text-3xl vw-font-bold vw-text-vw-card vw-mb-10 vw-text-center">Portfolio</h2>
-      <div class="vw-flex vw-flex-wrap vw-justify-center vw-items-center vw-gap-10">
+      <div class="vw-flex vw-flex-wrap vw-justify-center vw-items-center vw-gap-16">
         <a
           v-for="tech in stack"
           :key="tech.name"
@@ -12,7 +11,7 @@
           :title="tech.name"
           class="vw-grayscale hover:vw-grayscale-0 vw-opacity-70 hover:vw-opacity-100 vw-transition-all vw-duration-300"
         >
-          <img :src="tech.img" :alt="tech.name" class="vw-h-16 vw-w-auto vw-object-contain" />
+          <img :src="tech.img" :alt="tech.name" class="vw-h-32 vw-w-auto vw-object-contain" />
         </a>
       </div>
     </div>
@@ -20,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-const WP = 'https://vander.dk/wp-content/uploads'
+const WP = 'https://headless.vanderweb.dk/wp-content/uploads'
 
 const stack = [
   { name: 'WordPress',              img: `${WP}/WordPress_blue_logo.svg_-150x150.png`, url: 'https://wordpress.org' },

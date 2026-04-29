@@ -4,7 +4,7 @@
       <!-- Photo -->
       <div class="vw-shrink-0">
         <img
-          src="https://vander.dk/wp-content/uploads/ulrik-vander-300x300.jpg"
+          src="https://headless.vanderweb.dk/wp-content/uploads/ulrik-vander-300x300.jpg"
           alt="Ulrik Vander"
           class="vw-w-48 vw-h-48 vw-rounded-full vw-object-cover vw-ring-4 vw-ring-white/10"
         />

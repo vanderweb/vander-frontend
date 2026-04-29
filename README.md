@@ -1,6 +1,6 @@
 # vander-frontend
 
-Headless Nuxt 3 frontend for [vander.dk](https://vander.dk), consuming WordPress via REST API.
+Headless Nuxt 3 frontend for [vander.dk](https://vander.dk), consuming WordPress via REST API from [headless.vanderweb.dk](https://headless.vanderweb.dk).
 
 ## Requirements
 
@@ -31,7 +31,7 @@ The app will be available at http://localhost:3000.
 
 | Variable | Description |
 |---|---|
-| `WP_API_BASE` | WordPress REST API base URL, e.g. `https://vander.dk/wp-json/wp/v2` |
+| `WP_API_BASE` | WordPress backend URL, e.g. `https://headless.vanderweb.dk` |
 
 ## wp-nuxt-core
 

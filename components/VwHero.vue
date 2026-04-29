@@ -1,7 +1,7 @@
 <template>
   <section
-    class="vw-relative vw-flex vw-items-center vw-justify-center vw-min-h-[90vh] vw-bg-center vw-bg-cover vw-bg-no-repeat"
-    :style="{ backgroundImage: `url('https://vander.dk/wp-content/uploads/sai-kiran-anagani-5Ntkpxqt54Y-unsplash-scaled.jpg')` }"
+    class="vw-relative vw-flex vw-items-center vw-justify-center vw-h-[300px] vw-bg-center vw-bg-cover vw-bg-no-repeat"
+    :style="{ backgroundImage: `url('https://headless.vanderweb.dk/wp-content/uploads/sai-kiran-anagani-5Ntkpxqt54Y-unsplash-scaled.jpg')` }"
   >
     <div class="vw-absolute vw-inset-0 vw-bg-black/60" />
     <div class="vw-relative vw-z-10 vw-max-w-vw vw-mx-auto vw-px-6 vw-py-16 sm:vw-py-24">
