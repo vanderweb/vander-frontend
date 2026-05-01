@@ -1,21 +1,24 @@
-﻿<template>
-  <section class="vw-bg-white vw-py-16 vw-px-6">
+<template>
+  <section class="vw-border-t vw-border-gray-900/10">
     <div
-      class="vw-max-w-vw vw-mx-auto vw-flex vw-flex-col vw-gap-10 vw-items-center"
-      :class="section.layout === 'image_right' ? 'md:vw-flex-row' : 'md:vw-flex-row-reverse'"
+      class="vw-max-w-[1140px] vw-mx-auto vw-px-7 lg:vw-px-10 vw-py-16 sm:vw-py-20 vw-grid vw-grid-cols-1 md:vw-grid-cols-2 vw-gap-12 vw-items-center"
+      :class="section.layout === 'image_right' ? '' : 'md:[&>*:first-child]:vw-order-2'"
     >
-      <div v-if="section.image?.url" class="vw-shrink-0 vw-w-full md:vw-w-1/2">
-        <img
-          :src="section.image.url"
-          :alt="section.image.alt"
-          class="vw-w-full vw-h-auto vw-rounded-xl vw-object-cover"
-        />
+      <!-- Text -->
+      <div>
+        <p class="vw-font-mono vw-text-[9px] vw-tracking-[0.12em] vw-uppercase vw-text-gray-400 vw-mb-3">Editorial</p>
+        <h2 v-if="section.heading" class="vw-text-3xl vw-font-bold vw-tracking-tight vw-leading-snug vw-text-gray-900 vw-mb-5">{{ section.heading }}</h2>
+        <p v-if="section.text" class="vw-text-[15px] vw-text-gray-600 vw-leading-relaxed">{{ section.text }}</p>
       </div>
-      <div class="vw-flex-1 vw-space-y-4">
-        <h2 v-if="section.heading" class="vw-text-3xl vw-font-bold vw-text-vw-card vw-leading-snug">
-          {{ section.heading }}
-        </h2>
-        <p v-if="section.text" class="vw-text-vw-card vw-leading-relaxed">{{ section.text }}</p>
+      <!-- Image -->
+      <div>
+        <img
+          v-if="section.image?.url"
+          :src="section.image.url"
+          :alt="section.image.alt || section.heading"
+          class="vw-w-full vw-h-auto vw-object-cover vw-aspect-[4/5]"
+        />
+        <div v-else class="vw-aspect-[4/5] vw-bg-gray-100" />
       </div>
     </div>
   </section>
